@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/css/signup.css">
+    <title>My Intelli-Q | Signup</title>
+</head>
+
+<body>
+    <div class="login-box">
+        <div class="login-box-formbox">
+            <div class="login-box-login">
+                <h1>Sign Up. It's free and always will be.</h1>
+                <p>
+                    Sign up to My Intelli-Q using your E-mail ID and Password to get started!
+                </p>
+                {% for message in get_flashed_messages() %}
+                    <div class="alert alert-danger" role="alert">
+                        {{message}}
+                    </div>
+                {% endfor %}
+                <form method="POST">
+                    <div>
+                        <label for="email"> E-Mail</label>
+                        <input type="email" name="DUsername" class="input-email" autofocus/>
+                    </div>
+                    <div>
+                        <label for="password"> Password</label>
+                        <input type="password" name="DPassword" class="input-password" id="signuppw" />
+                    </div>
+                    <div>
+                        <label for="password"> Confirm Password</label>
+                        <input type="password" name="confPw" class="input-password" id="confirmpw" />
+                    </div>
+                    <input type="checkbox" onclick="showPw()"> Show Password
+                    <div>
+                        <input type="submit" value="Create account" class="btn" />
+                    </div>
+                </form>
+                <div class="login-box-signup text-center">
+                    Already have an account? <a href=signin>Sign In</a>
+                </div>
+            </div>
+        </div>
+        <div class="login-box-quotebox">
+            <div class="quote-container">
+                <img src="../static/assets/signup.svg" alt="sigupVector">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

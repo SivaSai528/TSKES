@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/css/signin.css">
+    <title>My Intelli-Q | Login</title>
+</head>
+
+
+<body>
+    <div class="login-box">
+        <div class="login-box-formbox">
+            <div class="login-box-login">
+                <h1>Login to My Intelli-Q</h1>
+                <p>
+                    Signin using your Registered Credentials
+                </p>
+                {% for message in get_flashed_messages() %}
+                {% if message.find('Awesome') != -1%}
+                    <div class="alert alert-success" role="alert">
+                        {{message}}
+                    </div>
+                {% else %}
+                    <div class="alert alert-danger" role="alert">
+                        {{message}}
+                    </div>
+                {% endif %}
+                {% endfor %}
+                <form method="POST">
+                    <div>
+                        <label for="email"> E-Mail</label>
+                        <input type="email" name="Username" class="input-email" autofocus/>
+                    </div>
+                    <div>
+                        <label for="password"> Password</label>
+                        <input type="password" name="Password" class="input-password" id="loginpw" />
+                    </div>
+                    <input type="checkbox" onclick="showPw()"> Show Password
+                    <div>
+                        <input type="submit" value="Login to account" class="btn" />
+                    </div>
+                </form>
+                <div class="login-box-signup text-center">
+                    Don't have an account? <a href=signup>Sign Up</a>
+                </div>
+            </div>
+        </div>
+        <div class="login-box-quotebox">
+            <div class="quote-container">
+                <img src="../static/assets/login.svg" alt="loginVector">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
